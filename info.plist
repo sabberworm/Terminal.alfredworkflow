@@ -17,6 +17,17 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>1D1A4B56-1AC6-491F-8E31-9AF48316E922</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9324EB78-042D-42D6-95D1-6A8B3867834A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>218060B9-7A22-434F-B0E2-D140156466A5</key>
 		<array>
 			<dict>
@@ -80,6 +91,17 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>E57A9899-E6DE-4F52-902E-501519F01D8B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1D1A4B56-1AC6-491F-8E31-9AF48316E922</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>FB8AF061-2547-4E7A-A875-2F2638B9A9DC</key>
 		<array>
 			<dict>
@@ -124,23 +146,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>open -a Terminal {query}</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.script</string>
-			<key>uid</key>
-			<string>44E853A8-1CB0-4609-8D8C-A0DACBA225AE</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>applescript</key>
 				<string>on alfred_script(q)
   tell application "Speed Download" to AddURL q
@@ -171,6 +176,23 @@ end alfred_script</string>
 			<string>alfred.workflow.trigger.action</string>
 			<key>uid</key>
 			<string>FB8AF061-2547-4E7A-A875-2F2638B9A9DC</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>open -a Terminal {query}</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.script</string>
+			<key>uid</key>
+			<string>44E853A8-1CB0-4609-8D8C-A0DACBA225AE</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -329,6 +351,57 @@ echo $ip</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)	tell application "iTunes"		set aTrack to current track		set res to ""		if number of items in selection &gt; 0 and (class of item 1 of selection) is file track then			set aTrack to item 1 of selection		end if		q		if q = "album" then			set res to "[album artist=" &amp; aTrack's artist &amp; "]" &amp; aTrack's album &amp; "[/album]"		else if q = "artist" then			set res to "[artist]" &amp; aTrack's artist &amp; "[/artist]"		else			set res to "[track artist=" &amp; aTrack's artist &amp; "]" &amp; aTrack's name &amp; "[/track]"		end if	end tellend alfred_scriptalfred_script("artist")</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>1D1A4B56-1AC6-491F-8E31-9AF48316E922</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>lfm</string>
+				<key>subtext</key>
+				<string>Arguments are “song” (default), “album” and “artist”</string>
+				<key>text</key>
+				<string>Copy last.fm BBCode</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>E57A9899-E6DE-4F52-902E-501519F01D8B</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>9324EB78-042D-42D6-95D1-6A8B3867834A</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -339,6 +412,11 @@ echo $ip</string>
 			<key>ypos</key>
 			<real>600</real>
 		</dict>
+		<key>1D1A4B56-1AC6-491F-8E31-9AF48316E922</key>
+		<dict>
+			<key>ypos</key>
+			<real>720</real>
+		</dict>
 		<key>218060B9-7A22-434F-B0E2-D140156466A5</key>
 		<dict>
 			<key>ypos</key>
@@ -347,7 +425,7 @@ echo $ip</string>
 		<key>239DC6C3-BAEB-4230-AB1B-62868A7C4A1D</key>
 		<dict>
 			<key>ypos</key>
-			<real>340</real>
+			<real>400</real>
 		</dict>
 		<key>23FCC909-1172-4B0F-AD6A-1A9A412B8578</key>
 		<dict>
@@ -357,22 +435,27 @@ echo $ip</string>
 		<key>3FDDA7B7-7EE0-4F34-B641-8E9C26C64B4E</key>
 		<dict>
 			<key>ypos</key>
-			<real>60</real>
+			<real>70</real>
 		</dict>
 		<key>44E853A8-1CB0-4609-8D8C-A0DACBA225AE</key>
 		<dict>
 			<key>ypos</key>
-			<real>50</real>
+			<real>240</real>
 		</dict>
 		<key>527E5CCF-1236-4BCA-9DC0-30ED6445083B</key>
 		<dict>
 			<key>ypos</key>
-			<real>300</real>
+			<real>360</real>
+		</dict>
+		<key>9324EB78-042D-42D6-95D1-6A8B3867834A</key>
+		<dict>
+			<key>ypos</key>
+			<real>720</real>
 		</dict>
 		<key>AF13D442-64C4-4EE3-AD1B-19F60E6D1708</key>
 		<dict>
 			<key>ypos</key>
-			<real>340</real>
+			<real>400</real>
 		</dict>
 		<key>C76DC8CE-49D7-41AE-9BF9-ACAAF1519920</key>
 		<dict>
@@ -387,7 +470,12 @@ echo $ip</string>
 		<key>E29BF6BE-3454-433A-BE9C-80C8CAF5D05F</key>
 		<dict>
 			<key>ypos</key>
-			<real>410</real>
+			<real>480</real>
+		</dict>
+		<key>E57A9899-E6DE-4F52-902E-501519F01D8B</key>
+		<dict>
+			<key>ypos</key>
+			<real>720</real>
 		</dict>
 		<key>FB8AF061-2547-4E7A-A875-2F2638B9A9DC</key>
 		<dict>
