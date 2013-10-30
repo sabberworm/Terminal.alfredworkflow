@@ -80,6 +80,17 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>D90ADA90-FB65-4CB0-96C3-632BC1DBCC23</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F6A573DB-7959-4EEE-A0CF-9AE27D2CCC96</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>E2835433-0A1B-491A-B0EE-7A6073DABCFD</key>
 		<array>
 			<dict>
@@ -402,6 +413,46 @@ echo $ip</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>j</string>
+				<key>text</key>
+				<string>Autojump</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>D90ADA90-FB65-4CB0-96C3-632BC1DBCC23</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>. ~/.bash_profile
+
+j {query} &gt; /dev/null 2&gt;&amp;1
+
+open $PWD</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>F6A573DB-7959-4EEE-A0CF-9AE27D2CCC96</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -462,6 +513,11 @@ echo $ip</string>
 			<key>ypos</key>
 			<real>600</real>
 		</dict>
+		<key>D90ADA90-FB65-4CB0-96C3-632BC1DBCC23</key>
+		<dict>
+			<key>ypos</key>
+			<real>840</real>
+		</dict>
 		<key>E2835433-0A1B-491A-B0EE-7A6073DABCFD</key>
 		<dict>
 			<key>ypos</key>
@@ -476,6 +532,11 @@ echo $ip</string>
 		<dict>
 			<key>ypos</key>
 			<real>720</real>
+		</dict>
+		<key>F6A573DB-7959-4EEE-A0CF-9AE27D2CCC96</key>
+		<dict>
+			<key>ypos</key>
+			<real>840</real>
 		</dict>
 		<key>FB8AF061-2547-4E7A-A875-2F2638B9A9DC</key>
 		<dict>
