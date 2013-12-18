@@ -124,6 +124,17 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>F6A573DB-7959-4EEE-A0CF-9AE27D2CCC96</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C43B097F-245E-4A11-96C5-A0C16349673D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>FB8AF061-2547-4E7A-A875-2F2638B9A9DC</key>
 		<array>
 			<dict>
@@ -248,25 +259,6 @@ end alfred_script</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>resolve</string>
-				<key>text</key>
-				<string>Resolves Windows Computer Addresses</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>239DC6C3-BAEB-4230-AB1B-62868A7C4A1D</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
@@ -298,6 +290,25 @@ echo $ip</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>resolve</string>
+				<key>text</key>
+				<string>Resolves Windows Computer Addresses</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>239DC6C3-BAEB-4230-AB1B-62868A7C4A1D</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>autopaste</key>
 				<false/>
 				<key>clipboardtext</key>
@@ -307,6 +318,25 @@ echo $ip</string>
 			<string>alfred.workflow.output.clipboard</string>
 			<key>uid</key>
 			<string>E29BF6BE-3454-433A-BE9C-80C8CAF5D05F</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>&gt;</string>
+				<key>text</key>
+				<string>Run Command</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>218060B9-7A22-434F-B0E2-D140156466A5</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -332,25 +362,6 @@ echo $ip</string>
 			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
 			<string>C76DC8CE-49D7-41AE-9BF9-ACAAF1519920</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>&gt;</string>
-				<key>text</key>
-				<string>Run Command</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>218060B9-7A22-434F-B0E2-D140156466A5</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -453,7 +464,9 @@ echo $ip</string>
 
 j {query} &gt; /dev/null 2&gt;&amp;1
 
-open $PWD</string>
+open .
+
+echo "$PWD"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -461,6 +474,31 @@ open $PWD</string>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>F6A573DB-7959-4EEE-A0CF-9AE27D2CCC96</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Jumped to</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>C43B097F-245E-4A11-96C5-A0C16349673D</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -533,7 +571,7 @@ end alfred_script</string>
 		<key>23FCC909-1172-4B0F-AD6A-1A9A412B8578</key>
 		<dict>
 			<key>ypos</key>
-			<real>280</real>
+			<real>290</real>
 		</dict>
 		<key>3FDDA7B7-7EE0-4F34-B641-8E9C26C64B4E</key>
 		<dict>
@@ -564,6 +602,11 @@ end alfred_script</string>
 		<dict>
 			<key>ypos</key>
 			<real>400</real>
+		</dict>
+		<key>C43B097F-245E-4A11-96C5-A0C16349673D</key>
+		<dict>
+			<key>ypos</key>
+			<real>840</real>
 		</dict>
 		<key>C76DC8CE-49D7-41AE-9BF9-ACAAF1519920</key>
 		<dict>
