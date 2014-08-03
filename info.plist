@@ -374,7 +374,11 @@ echo $ip</string>
 				<key>script</key>
 				<string>. ~/.bash_profile
 
-{query}</string>
+(
+	cd ~
+	{query}
+) 2&gt;&amp;1
+</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
