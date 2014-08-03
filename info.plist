@@ -237,6 +237,7 @@ end alfred_script</string>
 				<key>filetypes</key>
 				<array>
 					<string>public.folder</string>
+					<string>public.volume</string>
 				</array>
 				<key>name</key>
 				<string>Open Terminal Here</string>
