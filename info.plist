@@ -180,6 +180,7 @@ dir=~
 
 if [ -e ./termpath ]; then
 	dir="$(cat ./termpath)"
+	rm ./termpath
 fi
 
 (
