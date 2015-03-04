@@ -77,26 +77,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>acceptsmulti</key>
-				<false/>
-				<key>filetypes</key>
-				<array>
-					<string>public.folder</string>
-					<string>public.volume</string>
-				</array>
-				<key>name</key>
-				<string>Open Terminal Here</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.action</string>
-			<key>uid</key>
-			<string>23FCC909-1172-4B0F-AD6A-1A9A412B8578</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>escaping</key>
 				<integer>36</integer>
 				<key>script</key>
@@ -114,19 +94,20 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>&gt;</string>
-				<key>text</key>
-				<string>Run Command</string>
-				<key>withspace</key>
-				<true/>
+				<key>acceptsmulti</key>
+				<false/>
+				<key>filetypes</key>
+				<array>
+					<string>public.folder</string>
+					<string>public.volume</string>
+				</array>
+				<key>name</key>
+				<string>Open Terminal Here</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
+			<string>alfred.workflow.trigger.action</string>
 			<key>uid</key>
-			<string>218060B9-7A22-434F-B0E2-D140156466A5</string>
+			<string>23FCC909-1172-4B0F-AD6A-1A9A412B8578</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -171,10 +152,30 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>&gt;</string>
+				<key>text</key>
+				<string>Run Command</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>218060B9-7A22-434F-B0E2-D140156466A5</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>. ~/.bash_profile
+				<string>shopt -s expand_aliases
+source ~/.bash_profile
 
 dir=~
 
@@ -201,6 +202,24 @@ fi
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>script</key>
+				<string>echo "{query}" &gt; ./termpath
+osascript -e 'tell application "Alfred 2" to run trigger "terminal" in workflow "ch.ra-phi.alfred.terminal"'</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.script</string>
+			<key>uid</key>
+			<string>4A2731B0-3515-4AEE-AA9A-97238376BE32</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>acceptsmulti</key>
 				<false/>
 				<key>filetypes</key>
@@ -215,24 +234,6 @@ fi
 			<string>alfred.workflow.trigger.action</string>
 			<key>uid</key>
 			<string>3F3BCE17-01D7-4E3D-A322-D3683475943D</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>36</integer>
-				<key>script</key>
-				<string>echo "{query}" &gt; ./termpath
-osascript -e 'tell application "Alfred 2" to run trigger "terminal" in workflow "ch.ra-phi.alfred.terminal"'</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.script</string>
-			<key>uid</key>
-			<string>4A2731B0-3515-4AEE-AA9A-97238376BE32</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -254,7 +255,7 @@ osascript -e 'tell application "Alfred 2" to run trigger "terminal" in workflow 
 		<key>23FCC909-1172-4B0F-AD6A-1A9A412B8578</key>
 		<dict>
 			<key>ypos</key>
-			<real>80</real>
+			<real>90</real>
 		</dict>
 		<key>3F3BCE17-01D7-4E3D-A322-D3683475943D</key>
 		<dict>
@@ -264,7 +265,7 @@ osascript -e 'tell application "Alfred 2" to run trigger "terminal" in workflow 
 		<key>44E853A8-1CB0-4609-8D8C-A0DACBA225AE</key>
 		<dict>
 			<key>ypos</key>
-			<real>80</real>
+			<real>90</real>
 		</dict>
 		<key>4A2731B0-3515-4AEE-AA9A-97238376BE32</key>
 		<dict>
