@@ -63,6 +63,28 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>A58F8D77-093C-48CA-A162-8F3D45199264</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CD5DA0CC-1EB9-4C05-B536-BE255E493656</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>DDF472A7-84C7-49D3-9642-3F8E0462158D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A58F8D77-093C-48CA-A162-8F3D45199264</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>raφ</string>
@@ -77,6 +99,8 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
 				<key>escaping</key>
 				<integer>36</integer>
 				<key>script</key>
@@ -171,6 +195,8 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
@@ -188,6 +214,8 @@ fi
 	cd "$dir"
 	{query}
 ) 2&gt;&amp;1
+
+echo "Finished"
 </string>
 				<key>type</key>
 				<integer>0</integer>
@@ -196,24 +224,6 @@ fi
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>0313EE7B-DCF4-447A-B0B2-B4F3C01D5010</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>36</integer>
-				<key>script</key>
-				<string>echo "{query}" &gt; ./termpath
-osascript -e 'tell application "Alfred 2" to run trigger "terminal" in workflow "ch.ra-phi.alfred.terminal"'</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.script</string>
-			<key>uid</key>
-			<string>4A2731B0-3515-4AEE-AA9A-97238376BE32</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -234,6 +244,90 @@ osascript -e 'tell application "Alfred 2" to run trigger "terminal" in workflow 
 			<string>alfred.workflow.trigger.action</string>
 			<key>uid</key>
 			<string>3F3BCE17-01D7-4E3D-A322-D3683475943D</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>script</key>
+				<string>echo "{query}" &gt; ./termpath
+osascript -e 'tell application "Alfred 2" to run trigger "terminal" in workflow "ch.ra-phi.alfred.terminal"'</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.script</string>
+			<key>uid</key>
+			<string>4A2731B0-3515-4AEE-AA9A-97238376BE32</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>&lt;</string>
+				<key>subtext</key>
+				<string>with large type</string>
+				<key>text</key>
+				<string>Run Command</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>DDF472A7-84C7-49D3-9642-3F8E0462158D</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.output.largetype</string>
+			<key>uid</key>
+			<string>CD5DA0CC-1EB9-4C05-B536-BE255E493656</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>shopt -s expand_aliases
+source ~/.bash_profile
+
+dir=~
+
+if [ -e ./termpath ]; then
+	dir="$(cat ./termpath)"
+	rm ./termpath
+fi
+
+(
+	cd "$dir"
+	{query}
+) 2&gt;&amp;1
+
+echo "Finished"
+</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>A58F8D77-093C-48CA-A162-8F3D45199264</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -277,10 +371,25 @@ osascript -e 'tell application "Alfred 2" to run trigger "terminal" in workflow 
 			<key>ypos</key>
 			<real>200</real>
 		</dict>
+		<key>A58F8D77-093C-48CA-A162-8F3D45199264</key>
+		<dict>
+			<key>ypos</key>
+			<real>430</real>
+		</dict>
 		<key>C76DC8CE-49D7-41AE-9BF9-ACAAF1519920</key>
 		<dict>
 			<key>ypos</key>
 			<real>200</real>
+		</dict>
+		<key>CD5DA0CC-1EB9-4C05-B536-BE255E493656</key>
+		<dict>
+			<key>ypos</key>
+			<real>430</real>
+		</dict>
+		<key>DDF472A7-84C7-49D3-9642-3F8E0462158D</key>
+		<dict>
+			<key>ypos</key>
+			<real>430</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>
